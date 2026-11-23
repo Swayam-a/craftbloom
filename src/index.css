@@ -75,6 +75,7 @@
 }
 
 /* Hide Netlify floating badge / drawer widgets so they never overlap mobile navigation */
+netlify-drawer,
 #netlify-drawer,
 .netlify-badge,
 #netlify-badge,
@@ -86,5 +87,8 @@ iframe[src*="netlify"] {
   visibility: hidden !important;
   opacity: 0 !important;
   pointer-events: none !important;
+  transform: scale(0) !important;
+  height: 0 !important;
+  width: 0 !important;
 }
 
