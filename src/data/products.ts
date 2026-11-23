@@ -98,6 +98,8 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/hair-accessory-1.jpg',
     images: [
       '/images/products/hair-accessory-1.jpg',
+      '/images/products/originals/product-photo-1.jpg',
+      '/images/products/originals/product-photo-2.jpg',
       '/images/products/craftbloom-master.jpg'
     ],
     isBestseller: true,
@@ -135,6 +137,8 @@ export const PRODUCTS: Product[] = [
     images: [
       '/images/products/rose-stem-1.jpg',
       '/images/products/rose-stem-hero.jpg',
+      '/images/products/originals/product-photo-3.jpg',
+      '/images/products/originals/product-photo-4.jpg',
       '/images/products/cat-rose.jpg'
     ],
     isBestseller: true,
@@ -171,6 +175,8 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/tealight-trio-1.jpg',
     images: [
       '/images/products/tealight-trio-1.jpg',
+      '/images/products/originals/product-photo-5.jpg',
+      '/images/products/originals/product-photo-6.jpg',
       '/images/products/blue-velvet-diya.jpg',
       '/images/products/red-dahlia-diya.jpg'
     ],
@@ -208,6 +214,8 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/flower-pot-1.jpg',
     images: [
       '/images/products/flower-pot-1.jpg',
+      '/images/products/originals/product-photo-7.jpg',
+      '/images/products/originals/product-photo-8.jpg',
       '/images/products/sunflower-pot-hero.jpg',
       '/images/products/cat-sunflowers.jpg'
     ],
@@ -244,6 +252,8 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/diya-plate-1.jpg',
     images: [
       '/images/products/diya-plate-1.jpg',
+      '/images/products/originals/product-photo-9.jpg',
+      '/images/products/originals/product-photo-10.jpg',
       '/images/products/red-dahlia-diya.jpg',
       '/images/products/craftbloom-master.jpg'
     ],
@@ -279,6 +289,8 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/floral-toran-1.jpg',
     images: [
       '/images/products/floral-toran-1.jpg',
+      '/images/products/originals/product-photo-11.jpg',
+      '/images/products/originals/product-photo-12.jpg',
       '/images/products/floral-garland-hero.jpg',
       '/images/products/cat-toran.jpg'
     ],
@@ -315,6 +327,7 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/blue-velvet-diya.jpg',
     images: [
       '/images/products/blue-velvet-diya.jpg',
+      '/images/products/originals/product-photo-13.jpg',
       '/images/products/tealight-trio-1.jpg',
       '/images/products/hero-stage.jpg'
     ],
@@ -352,6 +365,7 @@ export const PRODUCTS: Product[] = [
     primaryImage: '/images/products/red-dahlia-diya.jpg',
     images: [
       '/images/products/red-dahlia-diya.jpg',
+      '/images/products/originals/product-photo-14.jpg',
       '/images/products/tealight-trio-1.jpg',
       '/images/products/craftbloom-master.jpg'
     ],
