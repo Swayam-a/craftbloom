@@ -6,52 +6,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CraftBloom — Handmade • Creative • Unique</title>
     <meta name="description" content="Discover handmade creations that bring colour, joy and creativity into every corner of your world. Little pieces of art, made with love." />
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Suppress Netlify Drawer & Badges -->
+
+    <!-- Neutralize Netlify HUD and Badge at the source -->
+    <script>
+      (function() {
+        // Strip data-nf-variant so Netlify's HUD script aborts
+        try {
+          const scripts = document.querySelectorAll('script[data-nf-variant]');
+          scripts.forEach(function(s) {
+            s.removeAttribute('data-nf-variant');
+            s.remove();
+          });
+        } catch (e) {}
+
+        // Immediate and continuous purge of Netlify badge frames
+        function purgeNetlify() {
+          const badge = document.getElementById('nl-badge-frame');
+          const hud = document.getElementById('nl-hud-frame');
+          if (badge) badge.remove();
+          if (hud) hud.remove();
+          document.querySelectorAll('iframe[id^="nl-"], [title="Powered by Netlify"], [title="Netlify"]').forEach(function(el) {
+            el.remove();
+          });
+        }
+
+        purgeNetlify();
+        if (typeof window !== 'undefined') {
+          window.addEventListener('DOMContentLoaded', purgeNetlify);
+          window.addEventListener('load', purgeNetlify);
+          new MutationObserver(purgeNetlify).observe(document.documentElement, { childList: true, subtree: true });
+        }
+      })();
+    </script>
+
     <style>
+      #nl-badge-frame,
+      #nl-hud-frame,
+      iframe[id^="nl-"],
+      iframe[title*="Netlify"],
+      [title*="Powered by Netlify"],
       netlify-drawer,
-      [data-netlify-drawer],
-      #netlify-drawer,
-      .netlify-badge {
+      [data-netlify-drawer] {
         display: none !important;
         visibility: hidden !important;
         opacity: 0 !important;
         pointer-events: none !important;
-        transform: scale(0) !important;
-        height: 0 !important;
         width: 0 !important;
-        overflow: hidden !important;
+        height: 0 !important;
+        transform: scale(0) !important;
+        clip-path: path("M0 0Z") !important;
+        position: absolute !important;
+        top: -99999px !important;
+        left: -99999px !important;
+        z-index: -9999 !important;
       }
     </style>
-    <script>
-      (function() {
-        function removeNetlifyElements() {
-          const targets = document.querySelectorAll('netlify-drawer, [data-netlify-drawer], #netlify-drawer, div[class*="netlify"], [id*="netlify"]');
-          targets.forEach(function(el) {
-            el.remove();
-          });
-          // Also remove any fixed floating badge iframes injected at the edge
-          document.querySelectorAll('iframe').forEach(function(frame) {
-            try {
-              const src = frame.src || '';
-              const id = frame.id || '';
-              if (src.includes('netlify') || id.includes('netlify') || frame.title.includes('Netlify')) {
-                frame.remove();
-              }
-            } catch (e) {}
-          });
-        }
-        removeNetlifyElements();
-        if (typeof window !== 'undefined') {
-          window.addEventListener('DOMContentLoaded', removeNetlifyElements);
-          window.addEventListener('load', removeNetlifyElements);
-          new MutationObserver(removeNetlifyElements).observe(document.documentElement, { childList: true, subtree: true });
-        }
-      })();
-    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body class="bg-[#FFFDF9] text-gray-800 antialiased selection:bg-brand-500 selection:text-white min-h-screen">
     <div id="root"></div>
