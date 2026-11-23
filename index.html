@@ -29,9 +29,19 @@
     <script>
       (function() {
         function removeNetlifyElements() {
-          const targets = document.querySelectorAll('netlify-drawer, [data-netlify-drawer], #netlify-drawer, div[class*="netlify"]');
+          const targets = document.querySelectorAll('netlify-drawer, [data-netlify-drawer], #netlify-drawer, div[class*="netlify"], [id*="netlify"]');
           targets.forEach(function(el) {
             el.remove();
+          });
+          // Also remove any fixed floating badge iframes injected at the edge
+          document.querySelectorAll('iframe').forEach(function(frame) {
+            try {
+              const src = frame.src || '';
+              const id = frame.id || '';
+              if (src.includes('netlify') || id.includes('netlify') || frame.title.includes('Netlify')) {
+                frame.remove();
+              }
+            } catch (e) {}
           });
         }
         removeNetlifyElements();
