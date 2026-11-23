@@ -73,3 +73,18 @@
 .safe-area-pb {
   padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
 }
+
+/* Hide Netlify floating badge / drawer widgets so they never overlap mobile navigation */
+#netlify-drawer,
+.netlify-badge,
+#netlify-badge,
+[data-netlify-drawer],
+[id*="netlify"],
+[class*="netlify-badge"],
+iframe[src*="netlify"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
