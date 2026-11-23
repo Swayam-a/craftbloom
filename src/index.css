@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #2D3748;
+    background-color: #FFFDF9;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF5FF;
+}
+::-webkit-scrollbar-thumb {
+  background: #C084FC;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #9333EA;
+}
+
+/* Organic background gradients and craft patterns */
+.hero-gradient {
+  background: linear-gradient(135deg, #FAF5FF 0%, #FCE7F3 40%, #FEF3C7 100%);
+}
+
+.text-handwritten {
+  font-family: 'Caveat', cursive;
+}
+
+.font-rounded {
+  font-family: 'Fredoka', sans-serif;
+}
+
+/* Floating interactive petal animation */
+@keyframes floatPetal {
+  0% {
+    transform: translateY(0) rotate(0deg) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(50vh) rotate(180deg) translateX(40px);
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(105vh) rotate(360deg) translateX(-30px);
+    opacity: 0;
+  }
+}
+
+.animate-floatPetal {
+  animation: floatPetal linear infinite;
+}
+
+/* Mobile safe area padding */
+.safe-area-pb {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
